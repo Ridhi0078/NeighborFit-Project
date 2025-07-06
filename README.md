@@ -15,6 +15,7 @@ NeighborFit is a full-stacck application that helps users find neighborhoods tha
 - SignUp/Login Functionality
 - Smart Matching Algorithm based on various lifestyle parameters
 - Add new neighborhoods with attributes
+- 🌐 Hosted MongoDB Database with MongoDB Atlas for secure and scalable cloud storage
 - Responsive UI with Tailwind CSS
 - Secure APIs using Express.js and MongoDB
 
@@ -99,7 +100,24 @@ Authorization: Bearer <token>
 ```
 
 ## Matching algorithm
-Matches are determined by calculationg the weighted similarity between the user's preferences and the attributes of each neighborhood.
+The matching algorithm logic uses Euclidean distance to find the neighborhoods most similar to the user's lifestyle.
+
+## How It Works:
+
+- User Identification ➤ The API receives a userId from the request parameters and fetches the corresponding user from the database.
+
+- Preference Extraction ➤ The system retrieves the user's saved preferences such as safety, affordability, walkability, internet speed, Green space etc.
+
+- Distance Calculation ➤ It computes the Euclidean distance between the user’s preferences and each neighborhood's attributes using the formula:
+
+``` bash
+distance = √[(p₁ - n₁)² + (p₂ - n₂)² + ... + (p₈ - n₈)²]
+```
+where p=user, n=neighborhood that is already present in database
+
+- Ranking ➤ All neighborhoods are sorted by their distance — lower distance means higher similarity.
+
+- Top Matches ➤ The top 5 closest matches are returned as the best-fit neighborhoods for that user.
 
 ## Deployment
 
@@ -139,6 +157,8 @@ Matches are determined by calculationg the weighted similarity between the user'
 
 - Add environment variables as also explained earlier, i.e. the deployed backend's URL that is defined in the `.env` file so as to fetch data from backend.
 - After successful deployement you will get a public URL for frontend.
+
+---
 
 ## Future Improvements
 - Add Google maps Integration.
