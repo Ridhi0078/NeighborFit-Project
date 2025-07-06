@@ -13,7 +13,7 @@ const app = express();
 const PORT = 3000;
 app.use(cors());
 // connection
-connectMongoDb('mongodb://127.0.0.1:27017/NeighborFit').then(()=>console.log("Mongo db Connected"));
+connectMongoDb(process.env.MONGO_URL).then(()=>console.log("Mongo db Connected"));
 
 // Middleware - plugin
 
