@@ -52,7 +52,6 @@ async function handleCreateNeighbourhood(req, res) {
         description: body.description,
     });
 
-    console.log(result);
     return res.status(201).json({ msg: "success", data: result });
     
 }
