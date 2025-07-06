@@ -1,5 +1,4 @@
 const express = require('express');
-//const isLoggedIn=require("./../middlewares/isLoggedIn");
 
 const {
     handleGetAllNeighbours,
