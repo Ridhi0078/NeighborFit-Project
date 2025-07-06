@@ -1,8 +1,11 @@
 const mongoose=require('mongoose');
 const fs=require('fs');
+const dotenv = require('dotenv');
 const Neighbourhood=require('./models/neighbour');
 
-mongoose.connect('mongodb://127.0.0.1:27017/NeighborFit');
+dotenv.config({ path: './config.env' });
+
+mongoose.connect(process.env.MONGO_URL);
 
 const data = JSON.parse(fs.readFileSync('./delhi_neighborhoodsfile.json', 'utf-8'));
 
