@@ -1,7 +1,6 @@
 const express = require('express');
 const cors=require('cors');
 const {connectMongoDb}=require('./connection');
-// const neighbourhood = require("../neighborhood_sample_data_numeric_ids.json")
 const neighbourRouter=require('./routes/neighbour');
 const userRouter=require('./routes/user');
 const matchRouter=require('./routes/match');
@@ -12,9 +11,10 @@ const {logReqRes}=require('./middlewares');
 const app = express();
 const PORT = 3000;
 app.use(cors());
-// connection
-connectMongoDb(process.env.MONGO_URL).then(()=>console.log("Mongo db Connected"));
 
+//connection
+const dbUrl=process.env.ATLASDB_URL;
+connectMongoDb(dbUrl).then(()=>console.log("Mongo db Connected"));
 // Middleware - plugin
 
 app.use(express.urlencoded({ extended: false }));
