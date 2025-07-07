@@ -84,12 +84,12 @@ Integrate this in the frontend files where you have to fetch data from the local
 
 | Method | Endpoint              | Description                            |
 |--------|------------------------|----------------------------------------|
-| POST   | `/api/user/signup`     | Register a new user                    |
+| POST   | `/api/user/`           | Register a new user                    |
 | POST   | `/api/user/login`      | Login and receive JWT                  |
 | GET    | `/api/user/:id`        | Get user by ID                         |
 | POST   | `/api/neighbour/`      | Create a new neighborhood              |
 | GET    | `/api/neighbour/`      | Get all neighborhoods                  |
-| POST   | `/api/match`           | Match user preferences to neighborhoods |
+| GET    | `/api/match/:id`       | Match user preferences to neighborhoods|
 
 ## Authentication
 - After login, a JWT token is stored in `localstorage`
