@@ -1,6 +1,6 @@
 # 🏡NeighborFit
 
-NeighborFit is a full-stacck application that helps users find neighborhoods that match their lifestyle preferences. It allows users to fill out a preference form based on their lifestyle and preferences or contribute by creating their own neighborhood listings.
+NeighborFit is a full-stack application that helps users find neighborhoods that match their lifestyle preferences. It allows users to fill out a preference form based on their lifestyle and preferences or contribute by creating their own neighborhood listings.
 
 ---
 
@@ -12,10 +12,10 @@ NeighborFit is a full-stacck application that helps users find neighborhoods tha
 
 ## 🚀Features
 - User Authentication using JWT
-- SignUp/Login Functionality
+- Signup/Login Functionality
 - Smart Matching Algorithm based on various lifestyle parameters
 - Add new neighborhoods with attributes
-- 🌐 Hosted MongoDB Database with MongoDB Atlas for secure and scalable cloud storage
+- Hosted MongoDB Database with MongoDB Atlas for secure and scalable cloud storage
 - Responsive UI with Tailwind CSS
 - Secure APIs using Express.js and MongoDB
 
@@ -78,7 +78,7 @@ After deploying the backend site, create `.env` file in the frontend folder
 ```bash
 VITE_API_URL=your backend url
 ```
-Integrate this in the frontend files where we have to fetch data from the localhost, in place of localhost:3000 add VITE_API_URL so that frontend fetch data from the deployed backend.
+Integrate this in the frontend files where you have to fetch data from the localhost, in place of localhost:3000 add VITE_API_URL so that frontend fetch data from the deployed backend.
 
 ## 📡 API Endpoints
 
@@ -155,7 +155,7 @@ where p=user, n=neighborhood that is already present in database
 |  **Build Command**  | `npm run build`                |
 | **Publish Directory** | `dist`                       |
 
-- Add environment variables as also explained earlier, i.e. the deployed backend's URL that is defined in the `.env` file so as to fetch data from backend.
+- Add environment variables as explained earlier, i.e. the deployed backend's URL that is defined in the `.env` of frontend file so as to fetch data from backend.
 - After successful deployement you will get a public URL for frontend.
 
 ---
