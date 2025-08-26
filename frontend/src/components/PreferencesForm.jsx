@@ -30,7 +30,7 @@ export default function PreferenceForm() {
 
     try {
       // 1. Update preferences
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/user/${userId}/preferences`, {
+      const res = await fetch(`http://localhost:3000/api/user/${userId}/preferences`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function PreferenceForm() {
       if (!res.ok) throw new Error("Failed to update preferences");
 
       // 2. Get matched neighborhoods
-      const matchRes = await fetch(`${import.meta.env.VITE_API_URL}/api/match/${userId}`);
+      const matchRes = await fetch(`http://localhost:3000/api/match/${userId}`);
       const matchData = await matchRes.json();
       setMatches(matchData.matches || []);
       setMessage("Top matches found!");
@@ -76,7 +76,7 @@ export default function PreferenceForm() {
           </div>
         ))}
         <div className="col-span-2">
-          <button type="submit" className="w-full bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700">
+          <button type="submit" className="w-full bg-[#F59E0B] text-white py-2 rounded hover:bg-yellow-600">
             Submit Preferences
           </button>
         </div>

@@ -21,7 +21,6 @@ export default function CreateNeighborhood() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Convert number fields to actual numbers
     const isNumberField = [
       "safety", "affordability", "public_transport", "walkability",
       "noise_level", "green_space", "internet_speed", "climate_score"
@@ -74,21 +73,37 @@ export default function CreateNeighborhood() {
   return (
     <>
       <Navbar />
-      <div className="max-w-2xl mx-auto mt-10 p-6 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-4 text-center">Create a Neighborhood</h2>
-        {message && <p className="mb-4 text-yellow-600">{message}</p>}
+      <div className="max-w-2xl mx-auto mt-10 p-6 rounded-lg shadow-lg bg-white">
+        <h2 className="text-2xl font-bold mb-4 text-center text-rose-500">
+          Create a Neighborhood
+        </h2>
+        {message && (
+          <p
+            className={`mb-4 text-center font-medium ${
+              message.includes("successfully")
+                ? "text-emerald-600"
+                : "text-red-600"
+            }`}
+          >
+            {message}
+          </p>
+        )}
         <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
           {Object.keys(formData).map((key) => (
             <div key={key} className="col-span-2 sm:col-span-1">
-              <label className="block text-sm font-medium mb-1 capitalize">
+              <label className="block text-sm font-medium mb-1 capitalize text-gray-700">
                 {key.replace(/_/g, " ")}
               </label>
               <input
-                type={key === "description" || key === "name" || key === "city" ? "text" : "number"}
+                type={
+                  key === "description" || key === "name" || key === "city"
+                    ? "text"
+                    : "number"
+                }
                 name={key}
                 value={formData[key]}
                 onChange={handleChange}
-                className="w-full border p-2 rounded"
+                className="w-full border border-gray-300 p-2 rounded focus:ring-rose-400 focus:border-rose-400"
                 required
               />
             </div>
@@ -96,7 +111,7 @@ export default function CreateNeighborhood() {
           <div className="col-span-2">
             <button
               type="submit"
-              className="w-full bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700"
+              className="w-full bg-[#F59E0B] text-white py-2 rounded hover:bg-yellow-600"
             >
               Create Neighborhood
             </button>
