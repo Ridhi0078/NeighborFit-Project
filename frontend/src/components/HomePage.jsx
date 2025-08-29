@@ -51,7 +51,7 @@ export default function HomePage() {
 
           <div className="bg-gray-50 rounded-xl shadow-md p-6">
             <h3 className="text-2xl font-semibold mb-6 text-gray-900">
-              Why Choose NeighborhoodFit?
+              Why Choose NeighborFit?
             </h3>
             <ul className="space-y-4 text-lg text-gray-700">
               <li className="flex items-start">

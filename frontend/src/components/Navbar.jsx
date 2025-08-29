@@ -32,7 +32,7 @@ export default function Navbar({ showLogout = false, handleLogout }) {
         {!showLogout && (
           <>
             <Link to="/login">
-              <button className="bg-[#F59E0B] text-[#fff] text-lg font-semibold py-2 px-6 rounded-lg hover:bg-amber-600 transition">
+              <button className="bg-[#F59E0B] text-[#fff] text-lg font-semibold py-2 px-6 rounded-lg hover:opacity-90 cursor-pointer transition">
                 Login/SignUp
               </button>
             </Link>
@@ -47,7 +47,7 @@ export default function Navbar({ showLogout = false, handleLogout }) {
         {showLogout && (
           <button
             onClick={handleLogout}
-            className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
+            className="bg-red-600 text-white px-4 py-2 rounded-lg hover:opacity-90 cursor-pointer transition"
           >
             Logout
           </button>

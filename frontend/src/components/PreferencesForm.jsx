@@ -76,7 +76,7 @@ export default function PreferenceForm() {
           </div>
         ))}
         <div className="col-span-2">
-          <button type="submit" className="w-full bg-[#F59E0B] text-white py-2 rounded hover:bg-yellow-600">
+          <button type="submit" className="w-full bg-[#F59E0B] text-white py-2 rounded hover:opacity-90">
             Submit Preferences
           </button>
         </div>

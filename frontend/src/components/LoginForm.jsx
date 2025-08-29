@@ -72,7 +72,7 @@ export default function LoginForm({ onLogin }) {
           />
           <button
             type="submit"
-            className="w-full bg-[#F59E0B] text-white py-2 rounded hover:bg-yellow-700"
+            className="w-full bg-[#F59E0B] text-white py-2 rounded hover:opacity-90 cursor-pointer"
           >
             Login
           </button>
